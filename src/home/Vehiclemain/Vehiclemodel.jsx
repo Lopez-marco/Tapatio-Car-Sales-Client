@@ -6,7 +6,6 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-import APIURL from "../../helpers/environment";
 import ReactHtmlParser from "react-html-parser";
 import VehicleModalEdit from "./VehicleModalEdit";
 import VehicleCarousle from "./VehicleCarousle"
@@ -37,7 +36,7 @@ const Vehiclemodel = (props) => {
   }, []);
 
   const Delete = () => {
-    fetch(`${APIURL}/vehicle/delveh/${props.vehicle.id}`, {
+    fetch(`https://tapatio-server.herokuapp.com/vehicle/delveh/${props.vehicle.id}`, {
       method: "Delete",
       headers: new Headers({
         "Content-Type": "application/json",

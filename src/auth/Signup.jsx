@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import APIURL from "../helpers/environment";
 
 const Signup = (props) => {
   const [Email, setEmail] = useState("");
@@ -8,7 +7,7 @@ const Signup = (props) => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`${APIURL}/user/signup`, {
+    fetch(`https://tapatio-server.herokuapp.com/user/signup`, {
       method: "POST",
       body: JSON.stringify({
         user: {

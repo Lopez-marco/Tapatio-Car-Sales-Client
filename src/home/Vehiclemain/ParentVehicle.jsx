@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Vehiclemain from "./Vehiclesmain";
 import { Card, CardHeader } from "reactstrap";
-import APIURL from "../../helpers/environment";
 // import Pagination from "./Pagination";
 
 const ParentVehicle = (props) => {
   const [vehicle, setVehicle] = useState([]);
 
   const fetchVehicle = () => {
-    fetch(`${APIURL}/vehicle/all`, {
+    fetch(`https://tapatio-server.herokuapp.com/vehicle/all`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

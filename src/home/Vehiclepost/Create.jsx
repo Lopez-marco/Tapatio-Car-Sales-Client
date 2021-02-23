@@ -34,7 +34,7 @@ const Create = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(props.updateToken);
-    fetch(`${APIURL}/vehicle/addveh`, {
+    fetch(`https://tapatio-server.herokuapp.com/vehicle/addveh`, {
       method: "POST",
       body: JSON.stringify({
         vehicle: {

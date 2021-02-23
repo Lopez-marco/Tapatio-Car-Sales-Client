@@ -12,7 +12,6 @@ import {
   Label,
   Input,
 } from "reactstrap";
-import APIURL from "../../helpers/environment";
 import Dropzone from "react-dropzone";
 import axios from "axios";
 import CKEditor from "@ckeditor/ckeditor5-react";
@@ -31,7 +30,7 @@ const VehicleModalEdit = (props) => {
 
   const vehicleEdit = (event) => {
     event.preventDefault();
-    fetch(`${APIURL}/vehicle/editveh/${props.vehicle.id}`, {
+    fetch(`https://tapatio-server.herokuapp.com/${props.vehicle.id}`, {
       method: "PUT",
       body: JSON.stringify({
         vehicle: {

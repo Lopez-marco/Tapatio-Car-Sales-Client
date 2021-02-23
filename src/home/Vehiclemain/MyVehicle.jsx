@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardHeader } from "reactstrap";
-import APIURL from "../../helpers/environment";
 import Vehiclesmain from "./Vehiclesmain";
 
 const MyVehicle = (props) => {
   const [vehicle, setVehicle] = useState([]);
 
   const mineVehicle = () => {
-    fetch(`${APIURL}/vehicle/mine`, {
+    fetch(`https://tapatio-server.herokuapp.com/vehicle/mine`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
